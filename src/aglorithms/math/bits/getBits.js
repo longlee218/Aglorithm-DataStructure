@@ -1,15 +1,9 @@
-function dec2bin(dec) {
-  return (dec >>> 0).toString(2);
-}
-
 /**
- *
+ * Get Bit at specific position from right to left
  * @param {number} number number
  * @param {number} bitPosition bit position - zero based
- * @return {number}
+ * @return {number} bit at position
  */
 export default function getBit(number, bitPosition) {
   return (number >> bitPosition) & 1;
 }
-
-console.log(getBit(9, 2))

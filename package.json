@@ -4,7 +4,10 @@
   "description": "",
   "main": "gitBits.js",
   "scripts": {
-    "test": "jest"
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "clean": "rm -rf build && mkdir build",
+    "test": "npm run build && jest"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +15,13 @@
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.2",
+    "@babel/node": "^7.20.2",
+    "@babel/plugin-transform-runtime": "^7.19.6",
     "@babel/preset-env": "^7.20.2",
+    "@jest/globals": "^29.3.1",
     "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.1"
   }
 }
